@@ -29,4 +29,19 @@ public class Sample21Controller {
     model.addAttribute("tasuResult1", tasuResult);
     return "sample21.html";
   }
+
+  /**
+   * @param tasu1
+   * @param tasu2
+   * @param model
+   * @return
+   */
+  @GetMapping("/sample23")
+  public String sample23(@RequestParam Integer tasu1, @RequestParam Integer tasu2, ModelMap model) {
+
+    int tasuResult = tasu1 + tasu2;
+
+    model.addAttribute("tasuResult2", tasuResult);
+    return "sample21.html";
+  }
 }
