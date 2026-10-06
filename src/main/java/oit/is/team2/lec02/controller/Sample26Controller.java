@@ -48,4 +48,21 @@ public class Sample26Controller {
     model.addAttribute("sum", sum);
     return "sample26.html";
   }
+
+  /**
+   * /sample26/ave にPOSTでアクセスされるとこのメソッドが呼び出される
+   *
+   * @return
+   */
+  @PostMapping("ave")
+  public String sample28(@RequestParam Double num1, @RequestParam Double num2, @RequestParam Double num3,
+      ModelMap model) {
+    ArrayList<Double> numList = new ArrayList<>();
+    numList.add(num1);
+    numList.add(num2);
+    numList.add(num3);
+    Score score = new Score(numList);
+    model.addAttribute("score", score);
+    return "sample26.html";
+  }
 }
